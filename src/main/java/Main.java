@@ -9,8 +9,8 @@ public class Main {
         World myWorld = new World("Hello Circle" /* Name */, RAYWHITE /* Color */,
                         new Integer[] {400, 400} /* Resolution LxH */, 60 /* Target FPS*/);
 
-        Circle myCircle = new Circle(BLACK, 25, new Vector2(myWorld.getHeight() / 2,
-                myWorld.getWidth() / 2));
+        Circle myCircle = new Circle(BLACK, 25, new Vector2(myWorld.getWidth() / 2,
+                myWorld.getHeight() / 2));
 
         myCircle.equation((Number t) -> {return new Vector2(myWorld.getWidth() / 2,
                 sin(t.doubleValue()) * 100 + myWorld.getHeight() / 2);});
