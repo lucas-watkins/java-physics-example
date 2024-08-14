@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.0'
+    id 'application'
+
+}
+
+group = 'com.lucaspowered'
+version = '1.0-SNAPSHOT'
+mainClassName = "Main"
+// breaks on macos without this jvm flag
+applicationDefaultJvmArgs = ["-XstartOnFirstThread"]
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation files('dependencies/base-physics-simulation.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
